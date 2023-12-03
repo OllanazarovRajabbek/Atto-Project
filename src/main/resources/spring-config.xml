@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean name="authController" class="controller.AuthController">
+        <property name="authService" ref="authService"/>
+    </bean>
+
+    <bean name="authService" class="service.AuthService">
+        <property name="profileController" ref="profileController"/>
+        <property name="adminController" ref="adminController"/>
+        <property name="profileRepository" ref="profileRepository"/>
+
+    </bean>
+
+    <bean name="profileController" class="controller.ProfileController"/>
+    <bean name="adminController" class="controller.AdminController"/>
+    <bean name="profileRepository" class="repository.ProfileRepository"/>
+
+
+</beans>
