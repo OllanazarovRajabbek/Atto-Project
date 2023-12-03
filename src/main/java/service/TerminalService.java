@@ -8,8 +8,11 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class TerminalService {
-    private TerminalRepository terminalRepository = new TerminalRepository();
+    private TerminalRepository terminalRepository ;
 
+    public void setTerminalRepository(TerminalRepository terminalRepository) {
+        this.terminalRepository = terminalRepository;
+    }
 
     public void addTerminal(Terminal terminal) {
         Terminal exist = terminalRepository.getTerminalByCode(terminal.getCode());

@@ -7,7 +7,11 @@ import repository.TransactionRepository;
 import java.time.LocalDateTime;
 
 public class TransactionService {
-    private TransactionRepository transactionRepository = new TransactionRepository();
+    private TransactionRepository transactionRepository;
+
+    public void setTransactionRepository(TransactionRepository transactionRepository) {
+        this.transactionRepository = transactionRepository;
+    }
 
     public void createTransaction(Integer cardId, Integer terminalId, Double amount, TransactionType type) {
         Transaction transaction = new Transaction();

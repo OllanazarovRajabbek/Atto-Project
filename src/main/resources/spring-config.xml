@@ -15,9 +15,40 @@
 
     </bean>
 
-    <bean name="profileController" class="controller.ProfileController"/>
+    <bean name="profileController" class="controller.ProfileController">
+        <property name="cardService" ref="cardService"/>
+    </bean>
+
     <bean name="adminController" class="controller.AdminController"/>
     <bean name="profileRepository" class="repository.ProfileRepository"/>
 
+    <bean name="cardService" class="service.CardService">
+        <property name="cardRepository" ref="cardRepository"/>
+        <property name="transactionService" ref="transactionService"/>
+        <property name="terminalService" ref="terminalService"/>
+    </bean>
 
+    <bean name="cardRepository" class="repository.CardRepository"/>
+
+    <bean name="transactionService" class="service.TransactionService">
+        <property name="transactionRepository" ref="transactionRepository"/>
+    </bean>
+
+    <bean name="terminalService" class="service.TerminalService">
+        <property name="terminalRepository" ref="terminalRepository"/>
+    </bean>
+
+
+    <bean name="transactionRepository" class="repository.TransactionRepository"/>
+    <bean name="terminalRepository" class="repository.TerminalRepository"/>
+
+    <bean name="admenController" class="controller.AdminController">
+        <property name="cardService" ref="cardService"/>
+        <property name="profileService" ref="profileService"/>
+        <property name="terminalService" ref="terminalService"/>
+    </bean>
+
+    <bean name="profileService" class="service.ProfileService">
+        <property name="profileRepository" ref="profileRepository"/>
+    </bean>
 </beans>

@@ -7,6 +7,7 @@ import util.ScannerUtil;
 import java.util.Scanner;
 
 public class AuthController {
+    private static final String GREEN = "\u001B[32m";
    private AuthService authService;
     public void setAuthService(AuthService authService) {
         this.authService = authService;
@@ -33,10 +34,10 @@ public class AuthController {
     }
 
     public void menu() {
-        System.out.println("********************Menu***********************");
-        System.out.println("1. Login > ");
-        System.out.println("2. Registration > ");
-        System.out.println("0. Exit > ");
+        System.out.println(GREEN + "\n***** Menu *****");
+        System.out.println("1.Login: ");
+        System.out.println("2.Registration: ");
+        System.out.println("0.Exit: ");
     }
 
     public void login() {

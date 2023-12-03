@@ -12,9 +12,22 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class CardService {
-    private CardRepository cardRepository = new CardRepository();
-    private service.TransactionService transactionService = new service.TransactionService();
-    private service.TerminalService terminalService = new service.TerminalService();
+    private CardRepository cardRepository ;
+    private TransactionService transactionService ;
+    private TerminalService terminalService;
+
+    public void setCardRepository(CardRepository cardRepository) {
+        this.cardRepository = cardRepository;
+    }
+
+    public void setTransactionService(TransactionService transactionService) {
+        this.transactionService = transactionService;
+    }
+
+    public void setTerminalService(TerminalService terminalService) {
+        this.terminalService = terminalService;
+    }
+
 
     public void addCardToProfile(String phone, String cardNum) {
         Card exists = cardRepository.getCardByNumber(cardNum);

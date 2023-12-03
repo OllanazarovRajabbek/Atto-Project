@@ -24,7 +24,6 @@ public class InitDataBase {
         profile.setStatus(GeneralStatus.ACTIVE);
         profile.setRole(ProfileRole.ADMIN);
 
-
         ProfileRepository profileRepository = new ProfileRepository();
 
         Profile profile1 = profileRepository.getProfileByPhone(profile.getPhone());

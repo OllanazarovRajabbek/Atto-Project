@@ -10,9 +10,22 @@ import util.ScannerUtil;
 import java.util.Scanner;
 
 public class AdminController {
-    private CardService cardService = new CardService();
-    private ProfileService profileService = new ProfileService();
-    private TerminalService terminalService = new TerminalService();
+    private static final String GREEN = "\u001B[32m";
+    private CardService cardService;
+    private ProfileService profileService ;
+    private TerminalService terminalService;
+
+    public void setCardService(CardService cardService) {
+        this.cardService = cardService;
+    }
+
+    public void setProfileService(ProfileService profileService) {
+        this.profileService = profileService;
+    }
+
+    public void setTerminalService(TerminalService terminalService) {
+        this.terminalService = terminalService;
+    }
 
     public void start(Profile profile) {
         boolean b = true;
@@ -86,31 +99,32 @@ public class AdminController {
     }
 
     public void menu() {
+        System.out.println(GREEN + "\n*****Admen Menu*****");
         // (Card)
-        System.out.println("1. Create Card");
-        System.out.println("2. Card List ");
-        System.out.println("3. Update Card ");
-        System.out.println("4. Card Change Status");
-        System.out.println("5. Delete Card");
+        System.out.println("1.Create Card: ");
+        System.out.println("2.Card List: ");
+        System.out.println("3.Update Card: ");
+        System.out.println("4.Card Change Status: ");
+        System.out.println("5.Delete Card: ");
         // (Terminal)
-        System.out.println("6. Create Terminal");
-        System.out.println("7. Terminal List");
-        System.out.println("8. Update Termina");
-        System.out.println("9. Change Terminal Status");
-        System.out.println("10. Delete");
+        System.out.println("6.Create Terminal: ");
+        System.out.println("7.Terminal List: ");
+        System.out.println("8.Update Termina: ");
+        System.out.println("9.Change Terminal Status: ");
+        System.out.println("10.Delete: ");
         //  (Profile)
-        System.out.println("11. Profile List");
-        System.out.println("12. Change Profile Status");
+        System.out.println("11.Profile List: ");
+        System.out.println("12.Change Profile Status: ");
         // (Transaction)
-        System.out.println("13. Transaction List");
-        System.out.println("14. Company Card Balance");
+        System.out.println("13.Transaction List: ");
+        System.out.println("14.Company Card Balance: ");
         //  (Statistic)
-        System.out.println("15. Bugungi to'lovlar");
-        System.out.println("16. Kunlik to'lovla");
-        System.out.println("17. Oraliq to'lovlar");
-        System.out.println("18. Umumiy balance");
-        System.out.println("19. Transaction by Terminal");
-        System.out.println("20. Transaction By Card");
+        System.out.println("15.Bugungi to'lovlar: ");
+        System.out.println("16.Kunlik to'lovla: ");
+        System.out.println("17.Oraliq to'lovlar: ");
+        System.out.println("18.Umumiy balance: ");
+        System.out.println("19.Transaction by Terminal: ");
+        System.out.println("20.Transaction By Card: ");
 
 
         System.out.println("0. Log out");

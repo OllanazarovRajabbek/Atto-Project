@@ -8,9 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
         DataBase.initTable();
-//
-//        InitDataBase.adminInit();
-//        InitDataBase.addCompanyCard();
+        InitDataBase.adminInit();
+        InitDataBase.addCompanyCard();
 
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-config.xml");
         AuthController authController = (AuthController) applicationContext.getBean("authController");

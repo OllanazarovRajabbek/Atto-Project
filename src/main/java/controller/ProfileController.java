@@ -7,7 +7,12 @@ import util.ScannerUtil;
 import java.util.Scanner;
 
 public class ProfileController {
-    private CardService cardService = new CardService();
+    private static final String GREEN = "\u001B[32m";
+    private CardService cardService;
+
+    public void setCardService(CardService cardService) {
+        this.cardService = cardService;
+    }
 
     public void start(Profile profile) {
         boolean b = true;
@@ -49,14 +54,15 @@ public class ProfileController {
 
 
     public void menu() {
-        System.out.println("1. Add Card");
-        System.out.println("2. Card List ");
-        System.out.println("3. Card Change Status");
-        System.out.println("4. Delete Card");
-        System.out.println("5. ReFill ");
-        System.out.println("6. Transaction List");
-        System.out.println("7. Make Payment");
-        System.out.println("0. Log out");
+        System.out.println(GREEN + "\n*****User Menu*****");
+        System.out.println("1.Add Card: ");
+        System.out.println("2.Card List: ");
+        System.out.println("3.Card Change Status: ");
+        System.out.println("4.Delete Card: ");
+        System.out.println("5.ReFill: ");
+        System.out.println("6.Transaction List: ");
+        System.out.println("7.Make Payment: ");
+        System.out.println("0.Log out");
     }
 
     /**
